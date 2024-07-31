@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class AudioPost extends Model
 {
-    protected $fillable = ['post_id', 'title', 'published_at', 'audio_length', 'audio_url', 'excerpt'];
+    protected $fillable = ['post_id', 'audio_length', 'audio_url'];
 
     public function post()
     {

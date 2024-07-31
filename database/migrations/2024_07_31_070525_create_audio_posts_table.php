@@ -16,11 +16,8 @@ class CreateAudioPostsTable extends Migration
         Schema::create('audio_posts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('post_id');
-            $table->string('title');
-            $table->date('published_at');
             $table->integer('audio_length');
             $table->string('audio_url');
-            $table->text('excerpt');
             $table->timestamps();
 
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');

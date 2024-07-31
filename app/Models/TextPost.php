@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TextPost extends Model
 {
-    protected $fillable = ['post_id', 'title', 'published_at', 'content', 'excerpt'];
+    protected $fillable = ['post_id', 'published_at', 'text'];
 
     public function post()
     {

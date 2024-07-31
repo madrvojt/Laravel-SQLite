@@ -16,10 +16,7 @@ class CreateTextPostsTable extends Migration
         Schema::create('text_posts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('post_id');
-            $table->string('title');
-            $table->date('published_at');
-            $table->text('content');
-            $table->text('excerpt');
+            $table->text('text');
             $table->timestamps();
 
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
