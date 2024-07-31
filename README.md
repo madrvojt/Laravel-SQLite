@@ -56,7 +56,7 @@ Pro textový příspěvek:
 	•	title (string) - Titulek příspěvku
 	•	published_at (datetime) - Datum publikace
 	•	text (string) - Text příspěvku
-	•	excerpt (string) - Perex příspěvku
+	•	lead (string) - Perex příspěvku
 
 Pro audio příspěvek:
 
@@ -65,7 +65,7 @@ Pro audio příspěvek:
 	•	published_at (datetime) - Datum publikace
 	•	audio_length (integer) - Délka audia v sekundách
 	•	audio_url (string) - URL odkaz na audio soubor
-	•	excerpt (string) - Perex příspěvku
+	•	lead (string) - Perex příspěvku
 
 Příklad:
 
@@ -78,7 +78,7 @@ curl -X POST http://localhost:8000/api/posts \
     "title": "Můj první příspěvek",
     "published_at": "2024-07-31 12:00:00",
     "content": "Toto je text příspěvku.",
-    "excerpt": "Krátký úvod do textu."
+    "lead": "Krátký úvod do textu."
 }'
 ```
 
