@@ -8,6 +8,8 @@ Tento projekt poskytuje API server se dvěma endpointy pro správu a načítán�
 Po stáhnutí projektu je potřeba zapnout příkaz: 
 
 ```sh
+  composer install 
+
   php artisan serve
 ```
 
