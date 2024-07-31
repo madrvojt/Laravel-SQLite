@@ -16,7 +16,8 @@ class PostController extends Controller
             'type' => 'required|in:text,audio',
             'title' => 'required_if:type,text',
             'content' => 'required_if:type,text',
-            'audio' => 'required_if:type,audio',
+            'audio_length' => 'required_if:type,audio',
+            'audio_url' => 'required_if:type,audio',
         ]);
 
 
