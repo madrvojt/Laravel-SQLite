@@ -2,6 +2,17 @@
 
 Tento projekt poskytuje API server se dvěma endpointy pro správu a načítání příspěvků uživatelů. API podporuje různé typy příspěvků, včetně textových a audio příspěvků, a je postaveno pomocí frameworku Laravel s databází SQLite.
 
+
+## Spustění
+
+Po stáhnutí projektu je potřeba zapnout příkaz: 
+
+```sh
+  php artisan serve
+```
+
+``` SQLite se součástí projektu ```
+
 ## Endpointy
 
 ### 1. Získání tokenu
