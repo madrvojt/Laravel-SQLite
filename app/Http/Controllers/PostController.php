@@ -14,8 +14,11 @@ class PostController extends Controller
 
         $request->validate([
             'type' => 'required|in:text,audio',
-            'title' => 'required_if:type,text',
-            'content' => 'required_if:type,text',
+            'title' => 'required',
+            'author' => 'required',
+            "published_at" => 'required',
+            "lead" => 'required',
+            'text' => 'required_if:type,text',
             'audio_length' => 'required_if:type,audio',
             'audio_url' => 'required_if:type,audio',
         ]);
@@ -26,6 +29,10 @@ class PostController extends Controller
         $post = new Post();
         $post->user_id = $user->id;
         $post->type = $request->type;
+        $post->title = $request->title;
+        $post->author = $request->author;
+        $post->published_at = $request->published_at;
+        $post->lead = $request->lead;
         $post->save();
 
         if ($request->type === 'text') {
@@ -43,7 +50,10 @@ class PostController extends Controller
 
     public function index($userId)
     {
-        $posts = Post::where('user_id', $userId)->with(['textPost', 'audioPost'])->get();
+        $posts = Post::where('user_id', $userId)
+        ->with(['textPost', 'audioPost'])
+        ->orderBy('published_at', 'desc') // or 'asc' for ascending order
+        ->get();
 
         return response()->json($posts);
     }
