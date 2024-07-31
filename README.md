@@ -72,10 +72,10 @@ curl -X POST http://localhost:8000/api/posts \
 -H "Authorization: Bearer {your_token}" \
 -H "Content-Type: application/json" \
 -d '{
-    "author": "Jan Novák",
+    "type": "text", 
     "title": "Můj první příspěvek",
     "published_at": "2024-07-31 12:00:00",
-    "text": "Toto je text příspěvku.",
+    "content": "Toto je text příspěvku.",
     "excerpt": "Krátký úvod do textu."
 }'
 ```
@@ -97,7 +97,8 @@ Parametry:
 Příklad:
 
 ```sh
-curl -X GET http://localhost:8000/api/posts/1
+curl -X GET http://localhost:8000/api/posts/1 \
+-H "Authorization: Bearer {your_token}"
 ```
 
 

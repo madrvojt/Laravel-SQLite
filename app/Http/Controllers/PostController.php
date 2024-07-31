@@ -11,6 +11,15 @@ class PostController extends Controller
 {
     public function store(Request $request)
     {
+
+        $request->validate([
+            'type' => 'required|in:text,audio',
+            'title' => 'required_if:type,text',
+            'content' => 'required_if:type,text',
+            'audio' => 'required_if:type,audio',
+        ]);
+
+
         $user = $request->user();
 
         $post = new Post();
